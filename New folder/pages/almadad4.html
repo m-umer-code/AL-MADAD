@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Loading Screen</title>
+    <title>AL MADAD</title>
     <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         * {
@@ -137,8 +137,8 @@
             }
 
             .animation-video {
-                width: 100px; /* Smaller video for mobile */
-                margin-left: 8px;
+                width: 110px; /* Smaller video for mobile */
+                margin-left: 11px;
             }
 
             .ayah-text {
@@ -187,10 +187,19 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Slow down the video playback speed
+        window.onload = function() {
+            // Ensure all resources are loaded before starting animations
+            const logo = document.querySelector('.logo');
             const video = document.querySelector('.animation-video');
+            const ayahContainer = document.querySelector('.ayah-container');
+
+            // Slow down the video playback speed
             video.playbackRate = 0.3; // Set playback speed to slower
+
+            // Start animations after resources are fully loaded
+            logo.style.animation = 'fadeIn 2s ease forwards';
+            video.style.animation = 'fadeIn 3s ease 1s forwards';
+            ayahContainer.style.animation = 'fadeIn 2s ease 3s forwards';
 
             setTimeout(function() {
                 const loader = document.querySelector('.loading-screen');
@@ -199,8 +208,8 @@
                 setTimeout(() => {
                     loader.style.display = 'none';
                 }, 800);
-            }, 12000000); // Increased duration to 12 seconds
-        });
+            }, 1200000000); // Increased duration to 12 seconds
+        };
     </script>
 </body>
 </html>
